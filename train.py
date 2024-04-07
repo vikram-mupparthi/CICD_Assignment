@@ -5,7 +5,7 @@ import numpy as np
 
 # file input
 df = pd.read_csv("data/train.csv")
-df = df[0:2]
+df = df[0:500]
 X = df.drop(columns=['Disease']).to_numpy()
 y = df['Disease'].to_numpy()
 labels = np.sort(np.unique(y))
