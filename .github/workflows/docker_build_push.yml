@@ -7,7 +7,7 @@ on:
       - synchronize
 
 jobs:
-  build_and_push:
+  Train:
     runs-on: ubuntu-latest
 
     steps:
@@ -33,10 +33,10 @@ jobs:
       - name: Push Docker image
         run: docker push vikrammupparthi/mlopsassignment:v1
 
-  pull:
+  Test:
     name: Pull Docker Image
     runs-on: ubuntu-latest
-    needs: build_and_push
+    needs: Train
     
     steps:
          - name: Checkout code
@@ -61,7 +61,7 @@ jobs:
             score=$(cat output.txt)
             
             # Define the threshold
-            threshold=0.3  # Adjust this threshold value as per your requirement
+            threshold=0.5 # Adjust this threshold value as per your requirement
             
             # Compare the score with the threshold
             if [ $(echo "$score > $threshold" | bc) -eq 1 ]; then
@@ -72,4 +72,3 @@ jobs:
               echo "Insufficient Accuracy"
               exit 1  # Mark the workflow as failed
             fi
-
