@@ -17,4 +17,4 @@ COPY . .
 RUN python train.py
 
 # Specify the command to run when the container starts
-CMD ["python", "test.py"]
+CMD ["python",  "test.py"]
