@@ -29,6 +29,7 @@ jobs:
 
       - name: Push Docker image
         run: docker push vikrammupparthi/mlopsassignment:v1
+          docker push mlopsassignment:v1
           
         
         
