@@ -28,7 +28,8 @@ jobs:
           password: dckr_pat_wQAkR2ot49kqygLZdDZ_Kw7Kc-w
 
       - name: Push Docker image
-        run: docker push mlopsassignment:v1
+        run: docker push vikrammupparthi/mlopsassignment:v1
+          
         
         
         
