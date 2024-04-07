@@ -16,6 +16,9 @@ jobs:
 
       - name: Build Docker image
         run: docker build -t vikrammupparthi/myimage:v1 .
+
+      - name: Run Docker container
+        run: docker run vikrammupparthi/myimage:v1
       
       - name: Tag Docker image
         run: docker tag vikrammupparthi/myimage:v1 vikrammupparthi/mlopsassignment:v1    
