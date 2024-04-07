@@ -5,13 +5,13 @@ import numpy as np
 
 # file input
 df = pd.read_csv("data/train.csv")
-df = df.sample(frac=0.5, random_state=42)
+df = df.sample(frac=0.1, random_state=42)
 X = df.drop(columns=['Disease']).to_numpy()
 y = df['Disease'].to_numpy()
 labels = np.unique(y)
 y = np.array([np.where(labels == x) for x in y]).flatten()
 
-model = LogisticRegression().fit(X, y)
+model = LogisticRegression(max_iter=100).fit(X, y)
 
 with open("model.pkl", 'wb') as f:
     pickle.dump(model, f)
