@@ -6,7 +6,7 @@ import numpy as np
 # file input
 df = pd.read_csv("data/train.csv")
 df = df[0:1500]
-X = df.drop(columns=['Disease']).to_numpy()
+X = df.drop(columns=[0:15]).to_numpy()
 y = df['Disease'].to_numpy()
 labels = np.sort(np.unique(y))
 y = np.array([np.where(labels == x) for x in y]).flatten()
