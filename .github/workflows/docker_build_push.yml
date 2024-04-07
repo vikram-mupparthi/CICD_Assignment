@@ -36,6 +36,7 @@ jobs:
   pull:
     name: Pull Docker Image
     runs-on: ubuntu-latest
+    needs: build_and_push
     
     steps:
          - name: Checkout code
