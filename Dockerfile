@@ -15,6 +15,3 @@ COPY . .
 
 # Train the model during the build phase (modify this as per your needs)
 RUN python train.py
-
-# Specify the command to run when the container starts
-CMD ["python",  "test.py"]
