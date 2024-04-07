@@ -53,7 +53,7 @@ jobs:
            run: docker pull vikrammupparthi/mlopsassignment:v1
 
          - name: Run Docker container
-           run: docker run -d --name Dockerfile vikrammupparthi/mlopsassignment:v1
+           run: docker run vikrammupparthi/mlopsassignment:v1
               
          - name: Test model
            run: |
