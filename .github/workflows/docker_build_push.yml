@@ -61,7 +61,7 @@ jobs:
             score=$(cat output.txt)
             
             # Define the threshold
-            threshold=0.1  # Adjust this threshold value as per your requirement
+            threshold=0.3 # Adjust this threshold value as per your requirement
             
             # Compare the score with the threshold
             if [ $(echo "$score > $threshold" | bc) -eq 1 ]; then
