@@ -29,5 +29,5 @@ yaml
            run: |
              docker run --rm my-image-name
              # Add any additional commands to check the score here
-             python score.py
+             python test.py
    
