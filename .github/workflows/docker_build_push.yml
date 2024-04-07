@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build Docker image
-        run: docker build -t MLOps-Assignment/myimage:test .
+        run: docker build -t mlopsassignment/myimage:test .
           
 
       - name: Log in to Docker registry
@@ -26,4 +26,4 @@ jobs:
           password: dckr_pat_wQAkR2ot49kqygLZdDZ_Kw7Kc-w
 
       - name: Push Docker image
-        run: docker push MLOps-Assignment/myimage:test
+        run: docker push mlopsassignment/myimage:test
