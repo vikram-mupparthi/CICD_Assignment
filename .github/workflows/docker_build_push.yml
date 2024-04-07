@@ -57,12 +57,18 @@ jobs:
 
          - name: Analyze Output and Set Workflow Status
            run: |
-            if grep -q "expected_output" output.txt; then
+            # Extract the score from output.txt
+            score=$(cat output.txt)
+            
+            # Define the threshold
+            threshold=0.5  # Adjust this threshold value as per your requirement
+            
+            # Compare the score with the threshold
+            if [ "$score" -ge "$threshold" ]; then
               echo "Test Passed"
               exit 0  # Mark the workflow as successful
             else
               echo "Test Failed"
               exit 1  # Mark the workflow as failed
             fi
-            
 
