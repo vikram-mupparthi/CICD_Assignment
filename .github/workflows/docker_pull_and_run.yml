@@ -7,9 +7,10 @@
          - completed
 
    jobs:
-     pull_and_run:
+     run:
        runs-on: ubuntu-latest
-
+       
+            
        steps:
          - name: Checkout code
            uses: actions/checkout@v2
@@ -20,13 +21,13 @@
              registry: docker.io
              username: vikrammupparthi
              password: dckr_pat_wQAkR2ot49kqygLZdDZ_Kw7Kc-w
-
+ 
          - name: Pull Docker image
-           run: docker pull my-image-name
+           run: docker pull vikrammupparthi/mlopsassignment:v1
 
          - name: Run Docker container
            run: |
-             docker run --rm my-image-name
+             docker run --rm vikrammupparthi/mlopsassignment:v1
              # Add any additional commands to check the score here
              python test.py
    
