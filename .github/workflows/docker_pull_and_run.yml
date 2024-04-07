@@ -1,4 +1,3 @@
-yaml
    name: Pull and Run Docker Image
 
    on:
