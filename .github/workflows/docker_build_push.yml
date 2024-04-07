@@ -34,7 +34,7 @@ jobs:
         run: docker push vikrammupparthi/mlopsassignment:v1
 
   Test:
-    name: Pull Docker Image
+    name: Test
     runs-on: ubuntu-latest
     needs: Train
     
