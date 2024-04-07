@@ -53,7 +53,16 @@ jobs:
            run: docker pull vikrammupparthi/mlopsassignment:v1
 
          - name: Run Docker container
-           run: docker run vikrammupparthi/mlopsassignment:v1
-              
-        
+           run: docker run vikrammupparthi/mlopsassignment:v1 > output.txt
+
+         - name: Analyze Output and Set Workflow Status
+           run: |
+            if grep -q "expected_output" output.txt; then
+              echo "Test Passed"
+              exit 0  # Mark the workflow as successful
+            else
+              echo "Test Failed"
+              exit 1  # Mark the workflow as failed
+            fi
+            
 
