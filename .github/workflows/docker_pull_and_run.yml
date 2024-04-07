@@ -1,10 +1,10 @@
    name: Pull and Run Docker Image
 
    on:
-     pull_request:
+     workflow_run:
+       workflows: ["Build and Push Docker Image"]
        types:
-         - opened
-         - synchronize
+         - completed
 
    jobs:
      pull_and_run:
