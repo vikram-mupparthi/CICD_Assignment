@@ -2,6 +2,7 @@ import pandas as pd
 from sklearn.linear_model import LogisticRegression
 import pickle
 import numpy as np
+import matplotlib.pyplot as plt
 
 # file input
 df = pd.read_csv("data/train.csv")
