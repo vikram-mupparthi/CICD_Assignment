@@ -72,4 +72,3 @@ jobs:
               echo "Insufficient Accuracy"
               exit 1  # Mark the workflow as failed
             fi
-
